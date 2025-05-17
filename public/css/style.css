@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    text-align: center;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ghost-input {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+  }
+  
+  .ghost-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(100, 100, 255, 0.5);
+  }
+  
+  .ghost-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ghost-button:hover {
+    background: #fff;
+    color: #764ba2;
+    border-color: #fff;
+  }
+  
+  p {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+  }
