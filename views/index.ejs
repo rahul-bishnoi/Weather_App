@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Weatherly</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300"
@@ -28,34 +29,44 @@
             value="Get Weather"
           />
         </form>
-        <% if(weather !== null){ %>
-        <p><%= weather %></p>
-        <% } %> <% if(error !== null){ %>
-        <p><%= error %></p>
+
+        <% if (weather !== null) { %>
+          <p><%= weather %></p>
+          <% if (icon) { %>
+            <img src="http://openweathermap.org/img/wn/<%= icon %>@2x.png" alt="Weather Icon">
+                      <p>Wind Speed: <%= wind %> m/s</p>
+          <p>Humidity: <%= humidity %>%</p>
+          <p>Pressure: <%= pressure %> hPa</p>
+          <% } %>
+        <% } %>
+
+        <% if (error !== null) { %>
+          <p><%= error %></p>
         <% } %>
       </fieldset>
     </div>
+
     <script>
-        const temp = <%= (typeof temp !== "undefined") && temp !== null ? JSON.stringify(temp) : "null" %>;
-  
-        if (temp !== null) {
-          let bgUrl = "";
-  
-          if (temp <= 5) {
-            bgUrl = "/images/cold.jpg";
-          } else if (temp <= 20) {
-            bgUrl = "/images/mild.jpg";
-          } else if (temp <= 30) {
-            bgUrl = "/images/warm.jpg";
-          } else {
-            bgUrl = "/images/hot.jpeg";
-          }
-  
-          document.body.style.backgroundImage = `url('${bgUrl}')`;
-          document.body.style.backgroundSize = "cover";
-          document.body.style.backgroundPosition = "center";
-          document.body.style.backgroundRepeat = "no-repeat";
+      const temp = <%= (typeof temp !== "undefined") && temp !== null ? JSON.stringify(temp) : "null" %>;
+
+      if (temp !== null) {
+        let bgUrl = "";
+
+        if (temp <= 5) {
+          bgUrl = "/images/cold.jpg";
+        } else if (temp <= 20) {
+          bgUrl = "/images/mild.jpg";
+        } else if (temp <= 30) {
+          bgUrl = "/images/warm.jpg";
+        } else {
+          bgUrl = "/images/hot.jpeg";
         }
-      </script>
+
+        document.body.style.backgroundImage = `url('${bgUrl}')`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "no-repeat";
+      }
+    </script>
   </body>
 </html>
